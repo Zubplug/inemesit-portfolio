@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Typewriter } from "react-simple-typewriter";
 import Slider from "react-slick";
+import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaGithub, FaEnvelope, FaDownload, FaGlobe, FaTools } from "react-icons/fa";
@@ -90,15 +91,46 @@ export default function PortfolioSite() {
           </div>
         </header>
 
-        {/* === About Me === */}
-        <section className="mb-16 text-center max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4">👋 About Me</h2>
-          <p className="text-gray-700 leading-relaxed">
-            I'm a multi-disciplinary professional passionate about building smart systems and empowering others. 
-            I develop scalable full-stack applications, support businesses with finance and compliance, 
-            coach individuals in forex and personal growth, and help teams ship better products faster.
-          </p>
-        </section>
+{/* === About Me === */}
+<section className="mb-20 max-w-4xl mx-auto px-4">
+  <h2 className="text-3xl font-bold mb-6 text-center">👤 About Me</h2>
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true }}
+    className="bg-white shadow-md rounded-2xl p-6 md:p-10 border border-gray-200"
+  >
+    <p className="text-gray-800 text-base md:text-lg leading-relaxed">
+      I'm <strong>Inemesit Joseph Akpan</strong>, a multi-disciplinary problem solver with a passion for systems,
+      strategy, and scalability. As a <strong>full-stack developer</strong>, I specialize in building responsive
+      web platforms using <span className="text-purple-700 font-medium">Laravel</span>,
+      <span className="text-purple-700 font-medium"> React</span>, and modern APIs, with a focus on usability,
+      security, and performance.
+    </p>
+
+    <p className="text-gray-800 text-base md:text-lg mt-5 leading-relaxed">
+      With a background in <strong>accounting and compliance consulting</strong>, I bring financial insight to
+      every project—streamlining operations, automating reporting, and ensuring regulatory readiness.
+      I'm also a <strong>forex strategist</strong> and certified <strong>life coach</strong>,
+      mentoring individuals and startups toward clarity, structure, and growth.
+    </p>
+
+    <p className="text-gray-800 text-base md:text-lg mt-5 leading-relaxed">
+      Whether you're a founder, team, or solo entrepreneur, I help you build what matters—technically,
+      financially, and personally. Let’s create something powerful together.
+    </p>
+
+    <div className="mt-6 text-center">
+      <a
+        href="#contact"
+        className="inline-block px-6 py-2 bg-purple-700 hover:bg-purple-800 text-white text-sm font-medium rounded-full shadow transition"
+      >
+        Let's Connect
+      </a>
+    </div>
+  </motion.div>
+</section>
 
         {/* === What I Offer === */}
         <section className="mb-16 text-center max-w-4xl mx-auto">
