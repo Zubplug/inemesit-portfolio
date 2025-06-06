@@ -71,11 +71,11 @@ export default function PortfolioSite() {
             </a>
           </div>
 
-          <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+          <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto px-4">
             <a
               href="/Resume-Inemesit-Akpan.pdf"
               download
-              className="inline-flex items-center gap-2 px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800 transition text-sm shadow"
+              className="inline-flex justify-center items-center gap-2 px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800 transition text-sm shadow w-full sm:w-auto"
             >
               <FaDownload /> Download Resume
             </a>
@@ -83,33 +83,52 @@ export default function PortfolioSite() {
               href="https://calendly.com/zubplug/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm shadow"
+              className="inline-flex justify-center items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm shadow w-full sm:w-auto"
             >
               Book a Call on Calendly
             </a>
           </div>
         </header>
 
-        {/* === About === */}
+        {/* === About Me === */}
         <section className="mb-16 text-center max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">👋 About Me</h2>
           <p className="text-gray-700 leading-relaxed">
-            I’m a passionate problem solver with a cross-functional background — a full-stack
-            developer fluent in Laravel & React, a certified accountant, business consultant, and
-            forex trader. Whether you're building a fintech app, optimizing systems, or launching
-            a coaching brand, I help bring structure, scalability, and real-world impact.
+            I'm a multi-disciplinary professional passionate about building smart systems and empowering others. 
+            I develop scalable full-stack applications, support businesses with finance and compliance, 
+            coach individuals in forex and personal growth, and help teams ship better products faster.
           </p>
         </section>
 
         {/* === What I Offer === */}
-        <section className="mb-16 text-center max-w-3xl mx-auto">
+        <section className="mb-16 text-center max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">🎯 What I Offer</h2>
-          <ul className="text-gray-700 space-y-2 text-sm leading-relaxed">
-            <li>✅ Web apps & API integrations (React, Laravel, Tailwind)</li>
-            <li>✅ Business & compliance strategy for startups & SMEs</li>
-            <li>✅ Forex automation & mentorship for financial independence</li>
-            <li>✅ Coaching programs and digital products launch support</li>
-          </ul>
+          <div className="grid gap-4 md:grid-cols-2 text-left">
+            <div className="bg-white border p-4 rounded-lg shadow-sm">
+              <h3 className="font-semibold mb-1">💻 Full-Stack Development</h3>
+              <p className="text-sm text-gray-600">
+                Scalable web apps & API integrations using Laravel, React, Tailwind, and Node.js.
+              </p>
+            </div>
+            <div className="bg-white border p-4 rounded-lg shadow-sm">
+              <h3 className="font-semibold mb-1">📊 Business & Compliance Strategy</h3>
+              <p className="text-sm text-gray-600">
+                Support for CAC, NIMC, PENCOM, SME accounting, and operational workflow design.
+              </p>
+            </div>
+            <div className="bg-white border p-4 rounded-lg shadow-sm">
+              <h3 className="font-semibold mb-1">💱 Forex Strategy & Mentorship</h3>
+              <p className="text-sm text-gray-600">
+                Technical analysis, automated trading bots, signal building, and coaching.
+              </p>
+            </div>
+            <div className="bg-white border p-4 rounded-lg shadow-sm">
+              <h3 className="font-semibold mb-1">🧠 Coaching & Digital Growth</h3>
+              <p className="text-sm text-gray-600">
+                Business clarity, life goals, and structured coaching for entrepreneurs and teams.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* === Tech Stack === */}
@@ -141,30 +160,23 @@ export default function PortfolioSite() {
         <section className="mb-16">
           <h2 className="text-2xl font-bold mb-6 border-b pb-2">🌟 Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Zubplug (Live)",
-                description:
-                  "A platform offering payments, identity, collective buying, and health services.",
-                link: "https://zubplug.com.ng",
-                icon: <FaGlobe />,
-                label: "Visit Live Site",
-              },
-              {
-                title: "Zubplug Backend (Laravel API)",
-                description:
-                  "Handles wallet, VTU, compliance, health, and escrow for users & partners.",
-                link: null,
-                label: "Private Repo – Request Demo",
-              },
-              {
-                title: "Zubplug Frontend (React + Tailwind)",
-                description:
-                  "Modern UI with dashboards, VTU tools, KYC, health booking, and marketplace.",
-                link: null,
-                label: "Private Repo – Access on Request",
-              },
-            ].map((p, i) => (
+            {[{
+              title: "Zubplug (Live)",
+              description: "A platform offering identity services, payments, compliance, and health tools.",
+              link: "https://zubplug.com.ng",
+              icon: <FaGlobe />,
+              label: "Visit Live Site",
+            }, {
+              title: "Zubplug Backend (Laravel API)",
+              description: "Robust backend for wallet, KYC, VTU, health, and marketplace logic.",
+              link: null,
+              label: "Private Repo – Request Access",
+            }, {
+              title: "Zubplug Frontend (React + Tailwind)",
+              description: "Modern frontend with dashboards, booking flow, partner/admin UI.",
+              link: null,
+              label: "Private Repo – Request Access",
+            }].map((p, i) => (
               <div
                 key={i}
                 className="rounded-xl border border-gray-200 bg-white shadow hover:shadow-lg hover:scale-[1.02] transition-all p-5"
@@ -188,25 +200,30 @@ export default function PortfolioSite() {
           </div>
         </section>
 
-        {/* === Testimonials Slider === */}
+        {/* === Testimonials === */}
         <section className="mb-20">
           <h2 className="text-2xl font-bold mb-6 border-b pb-2 text-center">💬 Testimonials</h2>
           <Slider {...sliderSettings}>
             {[
               {
-                quote:
-                  "Inemesit built a complete platform from scratch and integrated all services beautifully. His skill and attention to detail are top-notch.",
+                quote: "Inemesit built a complete platform from scratch and integrated all services beautifully. His skill and attention to detail are top-notch.",
                 author: "— Project Client, Abuja",
               },
               {
-                quote:
-                  "He delivers scalable systems that just work — from backend logic to clean UI. Highly recommended for fintech and health platforms.",
+                quote: "He delivers scalable systems that just work — from backend logic to clean UI. Highly recommended for fintech and health platforms.",
                 author: "— Partner Developer, Lagos",
               },
               {
-                quote:
-                  "He's not just a developer — he understands strategy, business, and user flows. A rare combination of tech + business insight.",
+                quote: "He's not just a developer — he understands strategy, business, and user flows. A rare combination of tech + business insight.",
                 author: "— Business Partner, UK",
+              },
+              {
+                quote: "Our SME struggled with manual records. Inemesit automated our reports and dashboards — now our team works smarter.",
+                author: "— Logistics Founder, PH",
+              },
+              {
+                quote: "I got my first forex payout after working with him. Great coach and even greater person.",
+                author: "— Forex Student, Nigeria",
               },
             ].map((item, i) => (
               <div key={i} className="px-4">
@@ -219,7 +236,7 @@ export default function PortfolioSite() {
           </Slider>
         </section>
 
-        {/* === Contact Form === */}
+        {/* === Contact === */}
         <section className="mb-16 max-w-xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-4">📬 Contact Me Directly</h2>
           <form
@@ -262,7 +279,7 @@ export default function PortfolioSite() {
           &copy; {new Date().getFullYear()} Inemesit Joseph Akpan · All rights reserved.
           <div className="mt-4">
             <span className="text-gray-700">
-              Available for full-time roles, freelance projects, mentorship, and partnerships.
+              Available for freelance, consulting, full-time roles, and mentorship collaborations.
             </span>
           </div>
         </footer>
