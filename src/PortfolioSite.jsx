@@ -16,6 +16,11 @@ import {
   FaTools,
   FaArrowRight,
   FaChartLine,
+  FaBolt,
+  FaShieldAlt,
+  FaUsers,
+  FaBriefcase,
+  FaCheckCircle,
 } from "react-icons/fa";
 
 const skillGroups = [
@@ -148,6 +153,43 @@ const testimonials = [
   },
 ];
 
+const impactHighlights = [
+  { label: "Production Products", value: "6+" },
+  { label: "Core Stacks", value: "Web • Mobile • API" },
+  { label: "Delivery Focus", value: "Quality + Speed" },
+  { label: "Engagement", value: "Full-time / Contract" },
+];
+
+const roleFit = [
+  {
+    title: "Senior Frontend Engineer",
+    icon: <FaBolt />,
+    text: "Owns React architecture, UI systems, and performance for product experiences that convert.",
+  },
+  {
+    title: "Full-Stack Engineer",
+    icon: <FaShieldAlt />,
+    text: "Builds secure backend services and scalable APIs, then ships polished frontend and mobile clients.",
+  },
+  {
+    title: "Product Engineer",
+    icon: <FaUsers />,
+    text: "Bridges product, design, and engineering to deliver features tied to business outcomes.",
+  },
+  {
+    title: "Technical Consultant",
+    icon: <FaBriefcase />,
+    text: "Improves existing systems, unblocks critical delivery, and structures maintainable roadmaps.",
+  },
+];
+
+const deliverySteps = [
+  "Understand business goal and delivery constraints.",
+  "Design lean architecture and implementation plan.",
+  "Ship in fast milestones with clear visibility.",
+  "Harden performance, quality, and handoff documentation.",
+];
+
 export default function PortfolioSite() {
   const sliderSettings = {
     dots: true,
@@ -221,8 +263,8 @@ export default function PortfolioSite() {
                     />
                   </p>
                   <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-300 md:text-base">
-                    I build reliable digital products with premium user experience standards, scalable architecture,
-                    and practical business impact from concept through production.
+                    Full-stack engineer focused on business-grade delivery. I design and ship software that users
+                    adopt quickly, teams can maintain confidently, and stakeholders can measure clearly.
                   </p>
 
                   <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
@@ -256,12 +298,23 @@ export default function PortfolioSite() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-lg border border-emerald-200/40 bg-emerald-300/15 px-5 py-2.5 text-sm font-semibold text-emerald-100 transition hover:bg-emerald-300/25"
                     >
-                      Book Strategy Call <FaArrowRight />
+                      Book Interview Call <FaArrowRight />
                     </a>
                   </div>
                 </div>
               </div>
             </motion.header>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {impactHighlights.map((item) => (
+                <div key={item.label} className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">{item.label}</p>
+                  <p className="mt-1 text-lg font-bold text-white" style={{ fontFamily: "Sora, sans-serif" }}>
+                    {item.value}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -270,16 +323,16 @@ export default function PortfolioSite() {
             <div className="grid gap-6 md:grid-cols-3">
               {[
                 {
-                  title: "Design-Grade UI Delivery",
-                  text: "Interfaces that feel polished, intentional, and conversion-focused across desktop and mobile.",
+                  title: "Conversion-Focused Product UI",
+                  text: "I create interfaces that reduce friction, increase trust, and drive action across web and mobile.",
                 },
                 {
-                  title: "Scalable Product Engineering",
-                  text: "Clean backend contracts, robust APIs, and maintainable frontend systems for long-term growth.",
+                  title: "Reliable Engineering Foundations",
+                  text: "Clean architecture, secure APIs, and maintainable systems that support scale without chaos.",
                 },
                 {
-                  title: "Business-Aligned Execution",
-                  text: "Technical implementation tied directly to operations, reporting, and measurable product outcomes.",
+                  title: "Business-First Execution",
+                  text: "I prioritize features by impact, not noise, and deliver with stakeholder visibility from day one.",
                 },
               ].map((item) => (
                 <motion.article
@@ -335,6 +388,56 @@ export default function PortfolioSite() {
                     ))}
                   </div>
                 </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-5 py-12 md:px-12 lg:px-24">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-7">
+              <h2 className="text-2xl font-extrabold text-white md:text-3xl" style={{ fontFamily: "Sora, sans-serif" }}>
+                Best-Fit Roles
+              </h2>
+              <p className="mt-2 text-sm text-slate-300 md:text-base">
+                Positioning for high-impact software roles where speed and quality both matter.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {roleFit.map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-5"
+                >
+                  <div className="flex items-center gap-3 text-cyan-100">
+                    {item.icon}
+                    <h3 className="text-lg font-bold text-white" style={{ fontFamily: "Sora, sans-serif" }}>
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="mt-2 text-sm text-slate-300">{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-5 py-12 md:px-12 lg:px-24">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-7">
+              <h2 className="text-2xl font-extrabold text-white md:text-3xl" style={{ fontFamily: "Sora, sans-serif" }}>
+                Delivery Process
+              </h2>
+              <p className="mt-2 text-sm text-slate-300 md:text-base">
+                A clear working model that reduces risk and keeps delivery predictable.
+              </p>
+            </div>
+            <div className="grid gap-3 md:grid-cols-2">
+              {deliverySteps.map((step) => (
+                <div key={step} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-4">
+                  <FaCheckCircle className="mt-0.5 text-emerald-200" />
+                  <p className="text-sm text-slate-200">{step}</p>
+                </div>
               ))}
             </div>
           </div>
@@ -409,10 +512,10 @@ export default function PortfolioSite() {
         <section id="contact" className="px-5 py-12 md:px-12 lg:px-24">
           <div className="mx-auto max-w-3xl rounded-3xl border border-white/10 bg-white/[0.05] p-6 md:p-8">
             <h2 className="text-center text-2xl font-extrabold text-white md:text-3xl" style={{ fontFamily: "Sora, sans-serif" }}>
-              Let&apos;s Build Something Exceptional
+              Open to Immediate Interviews
             </h2>
             <p className="mx-auto mt-2 max-w-xl text-center text-sm text-slate-300">
-              Open to full-time roles, consulting engagements, and high-impact product collaborations.
+              Available for senior engineering roles, contract delivery, and product-critical build engagements.
             </p>
 
             <form action="https://formspree.io/f/your-form-id" method="POST" className="mt-6 space-y-4">
