@@ -1,3 +1,73 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --bg-start: #f9f3e8;
+  --bg-end: #eef5f8;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-strong: rgba(255, 255, 255, 0.88);
+  --border-soft: rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(140deg, var(--bg-start), var(--bg-end));
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.premium-shell {
+  background: radial-gradient(circle at 6% 10%, rgba(245, 158, 11, 0.14), transparent 38%),
+    radial-gradient(circle at 95% 20%, rgba(244, 63, 94, 0.12), transparent 37%),
+    radial-gradient(circle at 40% 100%, rgba(14, 165, 233, 0.12), transparent 45%);
+}
+
+.noise-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black 15%, transparent 98%);
+}
+
+.premium-card {
+  background: linear-gradient(180deg, var(--surface-strong) 0%, var(--surface) 100%);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+}
+
+.slick-dots li button:before {
+  color: #475569 !important;
+  opacity: 0.3 !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #0f172a !important;
+  opacity: 0.9 !important;
+}
+
+.slick-slide {
+  height: auto;
+}
+
+.slick-slide > div {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .premium-card {
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+  }
+}
